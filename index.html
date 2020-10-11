@@ -212,6 +212,7 @@
             var sticky = navbar.offsetTop;
             let navDiv = document.querySelector('div');
             let header = document.querySelector('h1');
+            let li = document.querySelectorAll('li');
 
 function myFunction() {
     if(window.matchMedia('(max-width: 600px)').matches) {
@@ -219,6 +220,12 @@ function myFunction() {
         navbar.style.top = "0";
         navbar.style.color = "white";
         header.style.fontSize = "190%";
+        for (let i = 0; i < 5; i++) {
+          li[i].style.backgroundColor = "black";
+          li[i].style.padding = "0";
+          li[i].style.marginTop = '0';    
+        }
+
         return;
     }else if (window.pageYOffset >= sticky) {
   navbar.style.position = "fixed";
@@ -230,6 +237,11 @@ function myFunction() {
         header.style.top = "0%";
         header.style.left = '1%';
         header.style.color = "black";
+        for (let i = 0; i < 5; i++) {
+          li[i].style.backgroundColor = "none";
+          li[i].style.padding = "0";
+          li[i].style.margin = ' 0.5% 2% 0% 2%';    
+        }
   } else {
   navbar.style.position= "static";
   header.style.position = 'static';
@@ -238,6 +250,11 @@ function myFunction() {
   navbar.style.color = "white";
   navbar.style.paddingLeft = "0";
   navbar.style.borderBottom = "none";
+  for (let i = 0; i < 5; i++) {
+          li[i].style.backgroundColor = "none";
+          li[i].style.padding = "0";
+          li[i].style.margin = ' 0.5% 2% 0% 2%';    
+        }
   }
 }
 setInterval(() => {
