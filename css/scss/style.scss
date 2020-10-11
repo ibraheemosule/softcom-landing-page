@@ -240,9 +240,12 @@ main {
                 @media (max-width: 770px) {
                     width: 100%;
                     height: auto;
+                    margin-right: 0;
+                    padding-right: 0;
                 }
                 @media (max-width: 578px) {
                      margin-bottom: 10%;
+                     width: 90%;
                 }
             }
             aside {
@@ -308,6 +311,11 @@ main {
             ul.col-sm-12 {
                 grid-template-columns: 48% 48%;
                 margin-bottom: 150%;
+            }
+            img.boi {
+                object-fit: fill;
+                width: 80%;
+                height: 100%;
             }
         }
     }
