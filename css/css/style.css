@@ -318,7 +318,7 @@ footer.container {
     margin-left: .75rem;
     font-weight: 800;
     font-size: 120%; }
-  @media (max-width: 335px) {
+  @media (max-width: 380px) {
     footer.container button.btn {
       display: block;
       width: 100%;
