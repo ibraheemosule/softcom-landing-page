@@ -191,7 +191,7 @@
                     <li><a href="#">FMCG Webinar</a> <i class="fa fa-external-link"></i></li>
                     <li><a href="#">DevX Blog</a> <i class="fa fa-external-link"></i></li>
                 </ul>
-                <ul class=" col-6 col-sm-3">
+                <ul class=" col-6 col-md-6 col-lg-3">
                     <li class="row">
                     <a class="col-3"><img src="images/facebook-logo.png" alt="facebook-logo"></a>
                     <a class="col-3"><img src="images/twitter-logo.png" alt="twitter-logo"></a>
@@ -215,7 +215,7 @@
             let li = document.querySelectorAll('li');
 
 function myFunction() {
-    if(window.matchMedia('(max-width: 600px)').matches) {
+    if(window.matchMedia('(max-width: 575px)').matches) {
         navbar.style.position = "fixed";
         navbar.style.top = "0";
         navbar.style.color = "white";
@@ -238,7 +238,7 @@ function myFunction() {
         header.style.left = '1%';
         header.style.color = "black";
         for (let i = 0; i < 5; i++) {
-          li[i].style.backgroundColor = "none";
+          li[i].style.backgroundColor = "transparent";
           li[i].style.padding = "0";
           li[i].style.margin = ' 0.5% 2% 0% 2%';    
         }
@@ -251,7 +251,7 @@ function myFunction() {
   navbar.style.paddingLeft = "0";
   navbar.style.borderBottom = "none";
   for (let i = 0; i < 5; i++) {
-          li[i].style.backgroundColor = "none";
+          li[i].style.backgroundColor = "transparent";
           li[i].style.padding = "0";
           li[i].style.margin = ' 0.5% 2% 0% 2%';    
         }

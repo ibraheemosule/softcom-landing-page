@@ -218,7 +218,7 @@ main {
             color: $pColor;
             letter-spacing: 0.8px;
         }
-        div {
+        div.row {
             span {
                 height: 120%;
             position: relative;
@@ -246,6 +246,13 @@ main {
                 @media (max-width: 578px) {
                      margin-bottom: 10%;
                      width: 90%;
+                }
+            }
+        }
+            @media (max-width: 600px){
+                div.row {
+                    margin-left: 0;
+                    margin-right: 0;
                 }
             }
             aside {
@@ -350,6 +357,11 @@ main {
                 margin-top: 3%;
             }
         }
+        @media (max-width: 600px) {
+            div.col-12 {
+                margin: 8% 0;
+            }
+        }
     }
     @media (max-width: 490px) {
     section.fifth {
@@ -359,7 +371,6 @@ main {
     @media (max-width: 410px) {
         section.fifth {
             margin-top: 150%;
-        }
         }
 }
 footer.background {
