@@ -19,7 +19,7 @@
         <div class="container-fluid">
             <div class="row justify-content-sm-center">
            <h1 class="col-12">Inclusive Human Growth</h1> 
-           <p class="col-sm-5">Softcom is a technology company which aims to solve problems that will connect people and business to value that ultimately improves their lives</p>
+           <p class="col-10 col-md-8 col-lg-5">Softcom is a technology company which aims to solve problems that will connect people and business to value that ultimately improves their lives</p>
         </div>
     </div>
 
@@ -213,6 +213,7 @@
             let navDiv = document.querySelector('div');
             let header = document.querySelector('h1');
             let li = document.querySelectorAll('li');
+            let button = document.querySelector('button');
 
 function myFunction() {
     if(window.matchMedia('(max-width: 575px)').matches) {
@@ -222,8 +223,12 @@ function myFunction() {
         header.style.fontSize = "190%";
         for (let i = 0; i < 5; i++) {
           li[i].style.backgroundColor = "black";
-          li[i].style.padding = "0";
-          li[i].style.marginTop = '0';    
+          li[i].style.padding = "3% 0% 0% 0%";
+          li[i].style.marginTop = '0';
+          li[i].style.marginRight = '4%';
+          li[0].style.borderRadius  = '15px 15px 0 0'
+          li[4].style.borderRadius  = '0 0 15px 15px'
+          button.style.paddingBottom = '2%';
         }
 
         return;
@@ -240,7 +245,10 @@ function myFunction() {
         for (let i = 0; i < 5; i++) {
           li[i].style.backgroundColor = "transparent";
           li[i].style.padding = "0";
-          li[i].style.margin = ' 0.5% 2% 0% 2%';    
+          li[i].style.margin = ' 0.5% 2% 0% 2%'; 
+          li[0].style.borderRadius  = '0'
+          li[4].style.borderRadius  = '0'
+          button.style.paddingBottom = '0';   
         }
   } else {
   navbar.style.position= "static";
@@ -253,7 +261,10 @@ function myFunction() {
   for (let i = 0; i < 5; i++) {
           li[i].style.backgroundColor = "transparent";
           li[i].style.padding = "0";
-          li[i].style.margin = ' 0.5% 2% 0% 2%';    
+          li[i].style.margin = ' 0.5% 2% 0% 2%';  
+          li[0].style.borderRadius  = '0'
+          li[4].style.borderRadius  = '0'
+          button.style.paddingBottom = '0';     
         }
   }
 }

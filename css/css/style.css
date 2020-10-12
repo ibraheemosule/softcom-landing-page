@@ -67,7 +67,10 @@ header {
       letter-spacing: initial; }
     header div p {
       font-size: 110%;
-      margin-top: 2%; }
+      margin-top: 2%;
+      text-align: center;
+      margin-right: auto;
+      margin-left: auto; }
 
 main {
   padding-top: 8%; }
