@@ -28,43 +28,43 @@
             aria-controls="mynav" aria-expanded="false" aria-label="my nav"><span class="fa fa-navicon"></span></button>
             <div id="mynav" class="collapse navbar-collapse justify-content-sm-center">
             <ul class="navbar-nav">
-                <li class="nav-item active"><a class="activ">Home</a></li>
-                <li class="nav-item"><a>About</a></li>
-                <li class="nav-item"><a>Blog</a></li>
-                <li class="nav-item"><a>Careers</a></li>
-                <li class="nav-item"><a>Contact Us</a></li>
+                <li class="nav-item"><a class="activ navLink"  onClick=navigate0()>Home</a></li>
+                <li class="nav-item" ><a class="navLink" onClick=navigate1()>About</a></li>
+                <li class="nav-item" ><a class="navLink" onClick=navigate2()>Blog</a></li>
+                <li class="nav-item" ><a class="navLink" onClick=navigate3()>Careers</a></li>
+                <li class="nav-item" ><a class="navLink" onClick=navigate4()>Contact Us</a></li>
             </ul>
         </div>
         </nav>
 
         </header>
         <main class="container">
-            <h2>Our focus<hr></h2>
+            <h2 id="header">Our focus<hr></h2>
             <div class="row">
-                <p class="col-sm-6">
+                <p class="col-sm-6" id="body">
                     Following our work over the years, we have identified four key areas that would enable people and business.
                 </p>
             </div>
             <section class="first row">
-                <div class="col-sm-6 col-md-3">
+                <div class="col-sm-6 col-md-3 listCard">
                     <h6  style="font-style: oblique;">eyowo</h6>
                     <h3>Payment</h3>
                     <h5>A Bank On Every Phone</h5>
                     <p>Innovation to drive inclusion by bringing a bank to every phone, enabling people and businesses receive, spend, save, borrow and manage money</p>
                 </div>
-                <div class="col-sm-6 col-md-3">
+                <div class="col-sm-6 col-md-3 listCard">
                     <h6  style="font-weight: 600; opacity: 0.4;">Data beaver</h6>
                     <h3>Data</h3>
                     <h5>Insights For Decision Making</h5>
                     <p>Innovation to drive inclusion by bringing a bank to every phone, enabling people and businesses receive, spend, save, borrow and manage money</p>
                 </div>
-                <div class="col-sm-6 col-md-3">
+                <div class="col-sm-6 col-md-3 listCard">
                     <h6  style="font-weight: 700; font-size: 120%; opacity: 0.4;">koya</h6>
                     <h3>Learning</h3>
                     <h5>Quality For All</h5>
                     <p>Innovation to learning distribution, mobility and management to improve learning experience and outcomes</p>
                 </div>
-                <div class="col-sm-6 col-md-3">
+                <div class="col-sm-6 col-md-3 listCard">
                     <h6  style="font-size: 200%; font-weight: 900;"><span style= "opacity: 0.4;">Pass </span><strong style= "opacity: 0.7;">ID</strong></h6>
                     <h3>Identity</h3>
                     <h5>Enroll & Verify Anyone</h5>
@@ -214,6 +214,28 @@
             let header = document.querySelector('h1');
             let li = document.querySelectorAll('li');
             let button = document.querySelector('button');
+            let head = document.getElementById('header')
+            let body = document.getElementById('body')
+            const el =    document.getElementsByClassName('listCard')
+            const first = document.getElementsByClassName("first")[0]
+            let elOffset = first.offsetTop
+
+            setInterval(() => {
+                if(window.pageYOffset < elOffset && window.pageYOffset > window.innerHeight  ) {
+                    first.style.boxShadow = "5px 0px 50px 5px rgb(48 48 48 / 20%)"
+                  for(let i = 0; i < el.length; i++){
+                el[i].style.display = "block"
+                  }
+          
+            } else if(window.pageYOffset+394 < window.innerHeight) {
+                first.style.boxShadow = "0 0 0 0"
+                for(let i = 0; i < el.length; i++){
+                el[i].style.display = "none"
+                }
+                el[0].style.display = "block"
+            }
+}, 10);
+
 
 function myFunction() {
     if(window.matchMedia('(max-width: 575px)').matches) {
@@ -250,6 +272,10 @@ function myFunction() {
           li[4].style.borderRadius  = '0'
           button.style.paddingBottom = '0';   
         }
+        let val = 1
+
+
+
   } else {
   navbar.style.position= "static";
   header.style.position = 'static';
@@ -261,7 +287,8 @@ function myFunction() {
   for (let i = 0; i < 5; i++) {
           li[i].style.backgroundColor = "transparent";
           li[i].style.padding = "0";
-          li[i].style.margin = ' 0.5% 2% 0% 2%';  
+          li[i].style.margin = ' 0.5% 2% 0% 2%';
+          li[i].style.zIndex = "9999"
           li[0].style.borderRadius  = '0'
           li[4].style.borderRadius  = '0'
           button.style.paddingBottom = '0';     
@@ -271,6 +298,59 @@ function myFunction() {
 setInterval(() => {
     return myFunction()
 }, 10);
+
+const navigate0 = () => {
+    const listArray = document.getElementsByClassName("navLink")
+for(let i = 0; i < listArray.length; i++) {
+    listArray[i].style.borderBottom = "4px solid transparent"
+    listArray[0].style.borderBottomColor = "#f5e943";
+}
+head.innerText = "Our Focus";
+body.innerText = "Following our work over the years, we have identified four key areas that would enable people and business."
+
+}
+const navigate1 = () => {
+    console.log(header,body)
+    const listArray = document.getElementsByClassName("navLink")
+for(let i = 0; i < listArray.length; i++) {
+    listArray[i].style.borderBottom = "4px solid transparent"
+    listArray[1].style.borderBottomColor = "#f5e943";
+}
+head.innerHTML = "About Us";
+body.innerText = "rat id hendrerit finibus, erat orci congue lorem, vitae laoreet tellus massa nec justo. Fusce congue porta pulvinar. Pellentesque laoreet ante."
+}
+const navigate2 = () => {
+    const listArray = document.getElementsByClassName("navLink")
+for(let i = 0; i < listArray.length; i++) {
+
+    listArray[i].style.borderBottom = "4px solid transparent"
+    listArray[2].style.borderBottomColor = "#f5e943";
+}
+head.innerText = "Blog";
+body.innerText = "u rhoncus lorem mauris nec augue. Morbi eu ex tortor. Mauris sollicitudin lectus nunc. Nullam sodales massa quis maximus pretium. Donec diam neque, efficitur"
+}
+const navigate3 = () => {
+
+    const listArray = document.getElementsByClassName("navLink")
+for(let i = 0; i < listArray.length; i++) {
+
+    listArray[i].style.borderBottom = "4px solid transparent"
+    listArray[3].style.borderBottomColor = "#f5e943";
+}
+head.innerText = "Careers";
+body.innerText = "Phasellus viverra consequat nulla eget congue. Ut eget quam nibh. Etiam placerat, erat a pellentesque consequat, elit erat sodales risus, "
+}
+const navigate4 = () => {
+
+const listArray = document.getElementsByClassName("navLink")
+for(let i = 0; i < listArray.length; i++) {
+
+    listArray[i].style.borderBottom = "4px solid transparent"
+    listArray[4].style.borderBottomColor = "#f5e943";
+}
+head.innerText = "Contact Us";
+body.innerText = " Integer ac pretium lorem, et molestie erat. Proin porta, ligula ac efficitur ornare, metus elit tempor turpis, sit amet laoreet felis nisl quis purus."
+}
         </script>
     </body>
 </html>
